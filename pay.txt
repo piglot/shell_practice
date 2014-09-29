@@ -1,0 +1,4 @@
+Name June July August
+Ming 3500 3800 3880
+Lei  3000 2800 2500
+Xin  400  4080 3800

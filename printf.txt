@@ -1,0 +1,4 @@
+Name	Chinese		English		Math	Average 
+Yao	80		60		50	39.9
+Li	78		98		36	90.1
+Ken	60		50		70	73.33
