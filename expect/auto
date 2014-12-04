@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+# no need for timeout 1
+set timeout 600
+
+# use the wrapper
+spawn /mnt/wrapper /mnt/samecode
+
+expect {
+   "*yes/no*" { send "yes\r" ; exp_continue }
+   "*assword:" { send "zaq12wsx\r" ; exp_continue }
+   "done" { exit }
+}
