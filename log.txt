@@ -1,0 +1,70 @@
+
+last -n 5 | awk '{print $1 "\t" $3 }'
++ last -n 5
++ awk '{print $1 "\t" $3 }'
+piglot	:0
+piglot	:0
+piglot	:0
+reboot	boot
+piglot	:0
+	
+wtmp	Sat
+echo ___________________________________________________
++ echo ___________________________________________________
+___________________________________________________
+last -n 5 | awk '{print $1 "\t lines: " NR "\t columes: " NF}'
++ last -n 5
++ awk '{print $1 "\t lines: " NR "\t columes: " NF}'
+piglot	 lines: 1	 columes: 10
+piglot	 lines: 2	 columes: 10
+piglot	 lines: 3	 columes: 10
+reboot	 lines: 4	 columes: 11
+piglot	 lines: 5	 columes: 10
+	 lines: 6	 columes: 0
+wtmp	 lines: 7	 columes: 7
+echo ___________________________________________________
++ echo ___________________________________________________
+___________________________________________________
+cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1 "\t" $3 }'
++ cat /etc/passwd
++ awk '{FS=":"} $3 < 10 {print $1 "\t" $3 }'
+root:x:0:0:root:/root:/bin/bash	
+daemon	1
+bin	2
+sys	3
+sync	4
+games	5
+man	6
+lp	7
+mail	8
+news	9
+echo ___________________________________________________
++ echo ___________________________________________________
+___________________________________________________
+cat /etc/passwd | awk 'BEGIN {FS=":"} $3 < 10 {print $1 "\t" $3}'
++ cat /etc/passwd
++ awk 'BEGIN {FS=":"} $3 < 10 {print $1 "\t" $3}'
+root	0
+daemon	1
+bin	2
+sys	3
+sync	4
+games	5
+man	6
+lp	7
+mail	8
+news	9
+echo ___________________________________________________
++ echo ___________________________________________________
+___________________________________________________
+cat pay.txt | awk 'NR==1 {printf "%10s %10s %10s %10s %10s\n",$1,$2,$3,$4,"Total"}
+NR>=2 {total=$2+$3+$4
+printf "%10s %10d %10d %10d %10.2f\n",$1,$2,$3,$4,total}'
++ awk 'NR==1 {printf "%10s %10s %10s %10s %10s\n",$1,$2,$3,$4,"Total"}
+NR>=2 {total=$2+$3+$4
+printf "%10s %10d %10d %10d %10.2f\n",$1,$2,$3,$4,total}'
++ cat pay.txt
+      Name       June       July     August      Total
+      Ming       3500       3800       3880   11180.00
+       Lei       3000       2800       2500    8300.00
+       Xin        400       4080       3800    8280.00

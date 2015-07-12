@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/bash -xv
+
+#redirect standard output and error to ./log.txt
+exec > log.txt 2>&1
 
 last -n 5 | awk '{print $1 "\t" $3 }'
 echo ___________________________________________________
